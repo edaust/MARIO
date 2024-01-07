@@ -1,9 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-
 using UnityEngine;
 
 namespace Project2.Controllers
@@ -42,10 +36,10 @@ namespace Project2.Controllers
 
             transform.Translate(Vector2.right * _horizontal * Time.deltaTime * speed);
 
-            if (_horizontal != 0)
-            {
-                transform.localScale = new Vector2(Mathf.Sign(_horizontal), 1f);
-            }
+            //if (_horizontal != 0)
+            //{
+            //    transform.localScale = new Vector2(Mathf.Sign(_horizontal), 1f);
+            //}
 
             if (_rigidbody2D.velocity.y <= 0.1f && _isJumping)
             {
