@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-
+//
 public class KarakterHareket : MonoBehaviour
 {
     public float hareketHizi = 5f;
