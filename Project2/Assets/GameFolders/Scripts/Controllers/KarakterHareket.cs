@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.GameFolders.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -25,6 +26,12 @@ public class KarakterHareket : MonoBehaviour
         playerXScale = spriteRenderer.transform.localScale.x;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FailArea"))
+            Events.onFail?.Invoke();
+    }
+
     void Update()
     {
         Hareket();
@@ -35,7 +42,7 @@ public class KarakterHareket : MonoBehaviour
     void Hareket()
     {
         float yatayHareket = Input.GetAxis("Horizontal");
-        rb.velocity = new (yatayHareket * hareketHizi, rb.velocity.y);
+        rb.velocity = new(yatayHareket * hareketHizi, rb.velocity.y);
 
         animator.SetFloat("MoveSpeed", Mathf.Abs(yatayHareket));
     }

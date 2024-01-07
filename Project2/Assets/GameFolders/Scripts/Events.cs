@@ -10,6 +10,8 @@ namespace Assets.GameFolders.Scripts
     public static class Events
     {
         public static UnityEvent<int> onCollected = new();
+        public static UnityEvent onFail = new();
+        public static UnityEvent onSuccess = new();
 
     }
 }

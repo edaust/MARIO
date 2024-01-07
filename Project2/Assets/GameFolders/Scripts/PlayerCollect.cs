@@ -9,6 +9,8 @@ namespace Assets.GameFolders.Scripts
 {
     internal class PlayerCollect : MonoBehaviour
     {
+        public int LevelCollectRequirement = 0;
+
         int totalCollectCount = 0;
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -19,6 +21,9 @@ namespace Assets.GameFolders.Scripts
                 Events.onCollected?.Invoke(totalCollectCount);
 
                 Destroy(collision.gameObject);
+
+                if (totalCollectCount == LevelCollectRequirement)
+                    Events.onSuccess?.Invoke();
             }
         }
     }
