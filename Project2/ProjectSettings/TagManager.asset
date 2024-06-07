@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Collectable
   - FailArea
+  - Acorn
+  - Ladder
   layers:
   - Default
   - TransparentFX
